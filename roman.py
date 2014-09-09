@@ -44,7 +44,7 @@ def to_roman(n):
 			result += numeral
 			n -= integer
 	return result
-'''
+
 
 def from_roman(numero_romano):
 	'''convert Roman numeral to integer'''
@@ -59,7 +59,7 @@ def from_roman(numero_romano):
 			index += len(numeral)
 	return result
 
-'''
+
 
 
 class OutOfRangeError(ValueError): pass
