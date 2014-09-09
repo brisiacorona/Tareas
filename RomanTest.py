@@ -1,6 +1,7 @@
 import roman
 import unittest
 
+
 class KnownValues(unittest.TestCase):               
     known_values = ( (1, 'I'),
                      (2, 'II'),
@@ -59,13 +60,13 @@ class KnownValues(unittest.TestCase):
                      (3940, 'MMMCMXL'),
                      (3999, 'MMMCMXCIX'))  
 
-	def test_to_roman_known_values(self):
+  def test_to_roman_known_values (self):
       '''to_roman should give known result with known input'''
       for integer, numeral in self.known_values:
          result = roman.to_roman(integer)       
          self.assertEqual(numeral, result) 
-
-    def test_from_roman_known_values(self):
+'''
+  def test_from_roman_known_values(self):
       for integer, numeral in self.known_values:
          result = roman.from_roman(numeral)
          self.assertEqual(integer, result)
@@ -115,7 +116,7 @@ class FromRomanBadInput(unittest.TestCase):
     for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
               'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
       self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, s)
-
+'''
 
 if __name__ == '__main__':
     unittest.main()
