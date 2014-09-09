@@ -88,7 +88,7 @@ class ToRomanBadInput(unittest.TestCase):
    def test_non_integer(self):
       '''to_roman should fail with non-integer input'''
       self.assertRaises(roman.NotIntegerError, roman.to_roman, 0.5)
-'''
+
 
 class RoundtripCheck(unittest.TestCase):
     def test_roundtrip(self):
@@ -100,7 +100,7 @@ class RoundtripCheck(unittest.TestCase):
         self.assertEqual(integer, result)
 
 
-
+'''
 class FromRomanBadInput(unittest.TestCase):
   def test_too_many_repeated_numerals(self):
     '''from_roman should fail with too many repeated numerals'''
