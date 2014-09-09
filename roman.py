@@ -30,19 +30,21 @@ roman_numeral_pattern = re.compile('''
 '''
 
 '''
-def to_roman(numero_entero):
+def to_roman(n):
 
-	if not (0 < numero_entero < 4000):  
+	#if not (0 < n < 4000): 
+	if n > 3999:
+	 	pass 
 		raise OutOfRangeError('number out of range (must be less than 1...3999)') 
 
-	if not isinstance(numero_entero, int):                                          
-		raise NotIntegerError('non-integers can not be converted')
+	#if not isinstance(n, int):                                          
+		#raise NotIntegerError('non-integers can not be converted')
 
 	result = ''
 	for numeral, integer in roman_numeral_map:
-		while numero_entero >= integer:                     
+		while n >= integer:                     
 			result += numeral
-			numero_entero -= integer
+			n -= integer
 	return result
 '''
 
