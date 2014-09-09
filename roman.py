@@ -45,27 +45,9 @@ def to_roman(numero_entero):
 			numero_entero -= integer
 	return result
 '''
-def to_roman(n):
-    '''convertir integer to Roman numeral'''
-    result = ''
-    for numeral, integer in roman_numeral_map:
-        while n >= integer:                    
-            result += numeral
-            n -= integer
-            while n >= integer:
-              result += numeral
-              n -= integer
-              print('subtracting {0} from input, adding {1} to output'.format(integer, numeral))
-    
 
-    return result
-    
-class OutOfRangeError(ValueError):  
-    pass   
-'''
 def from_roman(numero_romano):
 	'''convert Roman numeral to integer'''
-
 	if not roman_numeral_pattern.search(numero_romano):
 		raise InvalidRomanNumeralError('Invalid Roman numeral: {0}'.format(numero_romano))
 
