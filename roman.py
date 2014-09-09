@@ -35,8 +35,8 @@ def to_roman(n):
 	if not (0 < n < 4000): 
 		raise OutOfRangeError('number out of range (must be less than 1...3999)') 
 
-	#if not isinstance(n, int):                                          
-		#raise NotIntegerError('non-integers can not be converted')
+	if not isinstance(n, int):                                          
+		raise NotIntegerError('non-integers can not be converted')
 
 	result = ''
 	for numeral, integer in roman_numeral_map:
