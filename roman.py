@@ -57,6 +57,7 @@ def from_roman(numero_romano):
 		while numero_romano[index:index+len(numeral)] == numeral:  
 			result += integer
 			index += len(numeral)
+		    print('found', numeral, 'of length', len(numeral), ', adding', integer)
 	return result
 
 
