@@ -32,9 +32,7 @@ roman_numeral_pattern = re.compile('''
 '''
 def to_roman(n):
 
-	#if not (0 < n < 4000): 
-	if n > 3999:
-	 	pass 
+	if not (0 < n < 4000): 
 		raise OutOfRangeError('number out of range (must be less than 1...3999)') 
 
 	#if not isinstance(n, int):                                          
