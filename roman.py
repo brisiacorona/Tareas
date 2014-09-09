@@ -15,7 +15,7 @@ roman_numeral_map = (('M',  1000),
 					('V',  5),
 					('IV', 4),
 					('I',  1)) 
-
+'''
 roman_numeral_pattern = re.compile('''
     ^                   # beginning of string
     M{0,3}              # thousands - 0 to 3 Ms
@@ -27,12 +27,10 @@ roman_numeral_pattern = re.compile('''
                         #        or 5-8 (V, followed by 0 to 3 Is)
     $                   # end of string
     ''', re.VERBOSE)
+'''
 
-
+'''
 def to_roman(numero_entero):
-	"""
-	TDD
-	"""
 
 	if not (0 < numero_entero < 4000):  
 		raise OutOfRangeError('number out of range (must be less than 1...3999)') 
@@ -46,7 +44,7 @@ def to_roman(numero_entero):
 			result += numeral
 			numero_entero -= integer
 	return result
-
+'''
 def from_roman(numero_romano):
 	'''convert Roman numeral to integer'''
 
@@ -60,12 +58,15 @@ def from_roman(numero_romano):
 			result += integer
 			index += len(numeral)
 	return result
+'''
 
 class OutOfRangeError(ValueError): pass
 
 class NotIntegerError(ValueError): pass
 
 class InvalidRomanNumeralError(ValueError): pass
+'''
+
 
     
 	
