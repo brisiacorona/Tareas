@@ -100,7 +100,7 @@ class RoundtripCheck(unittest.TestCase):
         self.assertEqual(integer, result)
 
 
-'''
+
 class FromRomanBadInput(unittest.TestCase):
   def test_too_many_repeated_numerals(self):
     '''from_roman should fail with too many repeated numerals'''
@@ -117,7 +117,7 @@ class FromRomanBadInput(unittest.TestCase):
     for s in ('IIMXCC', 'VX', 'DCM', 'CMM', 'IXIV',
               'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
       self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, s)
-'''
+
 
 if __name__ == '__main__':
     unittest.main()
