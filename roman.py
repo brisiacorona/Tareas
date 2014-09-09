@@ -17,16 +17,16 @@ roman_numeral_map = (('M',  1000),
 					('I',  1)) 
 '''
 roman_numeral_pattern = re.compile('''
-    ^                   # beginning of string
-    M{0,3}              # thousands - 0 to 3 Ms
-    (CM|CD|D?C{0,3})    # hundreds - 900 (CM), 400 (CD), 0-300 (0 to 3 Cs),
+   # ^                   # beginning of string
+  #  M{0,3}              # thousands - 0 to 3 Ms
+  #  (CM|CD|D?C{0,3})    # hundreds - 900 (CM), 400 (CD), 0-300 (0 to 3 Cs),
                         #            or 500-800 (D, followed by 0 to 3 Cs)
-    (XC|XL|L?X{0,3})    # tens - 90 (XC), 40 (XL), 0-30 (0 to 3 Xs),
+  #  (XC|XL|L?X{0,3})    # tens - 90 (XC), 40 (XL), 0-30 (0 to 3 Xs),
                         #        or 50-80 (L, followed by 0 to 3 Xs)
-    (IX|IV|V?I{0,3})    # ones - 9 (IX), 4 (IV), 0-3 (0 to 3 Is),
+  #  (IX|IV|V?I{0,3})    # ones - 9 (IX), 4 (IV), 0-3 (0 to 3 Is),
                         #        or 5-8 (V, followed by 0 to 3 Is)
-    $                   # end of string
-    ''', re.VERBOSE)
+   # $                   # end of string
+    #, re.VERBOSE)
 '''
 
 '''
@@ -45,6 +45,24 @@ def to_roman(numero_entero):
 			numero_entero -= integer
 	return result
 '''
+def to_roman(n):
+    '''convertir integer to Roman numeral'''
+    result = ''
+    for numeral, integer in roman_numeral_map:
+        while n >= integer:                    
+            result += numeral
+            n -= integer
+            while n >= integer:
+              result += numeral
+              n -= integer
+              print('subtracting {0} from input, adding {1} to output'.format(integer, numeral))
+    
+
+    return result
+    
+class OutOfRangeError(ValueError):  
+    pass   
+'''
 def from_roman(numero_romano):
 	'''convert Roman numeral to integer'''
 
@@ -58,6 +76,8 @@ def from_roman(numero_romano):
 			result += integer
 			index += len(numeral)
 	return result
+
+'''
 '''
 
 class OutOfRangeError(ValueError): pass
